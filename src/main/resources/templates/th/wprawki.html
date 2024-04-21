@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Title</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+  <header />
+
+  <h1>Strona główna, Wprawki</h1>
+  <h3 th:text="${msg} + ' którą dostałem'"> domyslne cos</h3>
+  <h3 th:text="|A date mamy taką: ${data}|"> domyslne cos2</h3>
+  
+  <h3 th:text="${cos}==1?'podałes jeden':(${cos}?:'nic nie ma')"> tu bedzie cos</h3>
+  
+  <div th:text="#{bbb}"> aaa </div>
+  <div th:utext="#{bbb}"> aaa </div>
+  <h3 th:text="#{msg.zparam(${cos}?:'nic nie ma')}"> domyslne cos</h3>
+  
+  <a href="#" th:href="@{/wprawki-th2(cos=${cos}?:'nic nie ma')}"> kliknij tu</a>
+
+  <footer />
+
+</body>
+
+</html>
